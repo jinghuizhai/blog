@@ -1,0 +1,46 @@
+---
+layout: default
+title: 用python写斐波那契数列和杨辉三角
+---
+<h1>用python写斐波那契数列和杨辉三角</h1>
+<p>
+    斐波那契数列：
+</p>
+<pre class="brush:python;toolbar:false">def fab(max):
+	n,a,b = 0,0,1
+	while n&lt;max:
+		yield b
+		a,b = b,a+b
+		n = n+1</pre>
+<p>
+    调用：<br/>
+</p>
+<pre class="brush:python;toolbar:false">g = fab(10)
+for x in g:
+    print x</pre>
+<p>
+    杨辉三角：
+</p>
+<pre class="brush:python;toolbar:false">def triangles(max):
+	n,a,b = 0,[1],[]
+
+	while n &lt; max:
+		yield a
+		a.insert(0,0)
+		a.append(0)
+		length = len(a)
+		for index,value in enumerate(a):
+			if index &lt; length - 1:
+				b.append(value+a[index+1])
+
+		a,b = b,[]
+		n = n+1</pre>
+<p>
+    调用：<br/>
+</p>
+<pre class="brush:python;toolbar:false">g = triangles(10)
+for x in g:
+	print x</pre>
+<p>
+    <br/>
+</p>
