@@ -1,0 +1,77 @@
+---
+layout: default
+title: python中的list，tuple和dict
+---
+<h1>python中的list，tuple和dict</h1>
+<p>
+    list是集合，是javascript里的Array和php里的array，用[]表示，tuple是不可变的list，用()表示，dict是javascript里的object，用{}表示。
+</p>
+<p>
+    操作list就像操作数据库，了解增删改查方法就可以了。
+</p>
+<p>
+    <strong>list:</strong>
+</p>
+<pre class="brush:python;toolbar:false"><code>list = [1]
+
+增：list.append(2)，在list末尾添加元素，无返回值；#list = [1,2]
+
+删：list.pop([index]),按元素索引删除元素，没有参数默认删除list最后一个元素，返回删除的元素。
+
+  list.remove([element])，删除与参数相等的元素，list里可以有重复元素，一次调用remove方法，只删除第一次出现的元素。
+  
+  pop是按索引删除，remove是按值删除。
+  
+改：list.insert[0,1]表示把数字1放在索引为0的位置，其他元素依次“后移”
+
+  也可以直接按索引赋值:list[0] = 1
+  
+查：list[0]表示查找第一个元素。如果一次查找多个元素，可以用切片(slice)，像javascript里的slice方法。
+
+    list = [1,2,3]
+    
+    print list[0:1] #[1]
+    
+    print  list[1:2] #[2]
+    
+    print list[0:] # [1,2,3]
+    
+    print list[:3] #[1,2,3]
+    
+    ‘前包后不包’，list[0,1]表示包含索引为0的元素，但不包含索引为1的元素
+    
+    第一个或最后一个元素为开头和结尾，可以省略，所以复制一个list就是：list[:]
+    
+    隔两个取一个就是list[::2] # [2]</code></pre>
+<p>
+    <strong>tuple:</strong>
+</p>
+<p>
+    tuple是不可变的list，所以并没有增删改方法，但是可以用切片查，除非其元素中有list，比如：
+</p>
+<code class="brush:python;toolbar:false">tuple = (1,2,[3,4])</code>
+<p>
+    可以对tuple的第三个元素进行增删改查的操作。<br/>
+</p>
+<p>
+    <strong>dict:</strong>
+</p>
+<pre class="brush:python;toolbar:false"><code>dict = {&#39;a&#39;:1,&#39;b&#39;:2}
+
+增：dict[&#39;c&#39;] = 3
+
+删：dict.pop(&#39;c&#39;)
+
+改：dict[&#39;b&#39;] = 3
+
+查: dict[&#39;1&#39;] # 1
+
+    也可以：dic = dict.get(&#39;c&#39;:-1) # 没有c元素的话返回-1
+    
+    print dict(&#39;c&#39;) # -1</code></pre>
+<p>
+    <strong>小结：</strong>
+</p>
+<p>
+    list的增删查改记住几个关键字：append,pop,remove,insert;dict的所有操作都是基于key的。
+</p>

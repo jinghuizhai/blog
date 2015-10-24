@@ -1,0 +1,65 @@
+---
+layout: default
+title: python中的setter和getter方法
+---
+<h1>python中的setter和getter方法</h1>
+<p>
+    通常，我们这样做:
+</p>
+<pre class="brush:python;toolbar:false"><code>class Student():
+
+	def get_score(self):
+		return self._score
+
+	def set_score(self,score):
+		if score &lt; 0 or score &gt; 100:
+			self._score = &#39;not illegal&#39;
+		else:
+			self._score = score</code></pre>
+<p>
+    实例：
+</p>
+<pre class="brush:python;toolbar:false"><code>tom = Student()
+tom.set_score(88)
+print tom.get_score()</code></pre>
+<p>
+    利用python的装饰器（<span style="color: rgb(102, 102, 102); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 20px; white-space: pre-wrap; background-color: rgb(255, 255, 255);">decorator</span>），会方便一点
+</p>
+<pre class="brush:python;toolbar:false"><code>class Student():
+
+	@property
+	def score(self):
+	    return self._score
+
+	@score.setter
+	def score(self,score):
+		if score &lt; 0 or score &gt; 100:
+			self._score = &#39;not illegal&#39;
+		else:
+			self._score = score</code></pre>
+<p>
+    实例：
+</p>
+<pre class="brush:python;toolbar:false"><code>jack = Student()
+jack.score = 89
+print jack.score</code></pre>
+<p>
+    <br/>
+</p>
+<p>
+    我们习惯性的，在成员变量前加_。
+</p>
+<p>
+    需要注意的是，python中没有任何机制阻止你使用
+</p>
+<code>tom._score = 55
+print tom_score</code>
+<p>
+    设置和获取score的值，一切都基于自觉。
+</p>
+<p>
+    那为什么还要什么setter和getter呢，我直接self.score = 88不就行了？
+</p>
+<p>
+    是为了检查参数的正确性。
+</p>
