@@ -33,20 +33,20 @@ angular对搜索引擎不友好，非常适合于后端的单页面应用。在�
 	    }
 	}
 </code></pre>
-##div:
-	<pre><code>
+## div
+<pre><code>
 	<ul id="list">
 	    <li>
 	        {{ name }}
 	    </li>
 	</ul>
-	</code></pre>
-##调用：
-	<pre><code>
+</code></pre>
+## 调用
+<pre><code>
 	var html = model(document.getElementById('list').innerHTML,[{name:'Tom'},{name:'Jack'},{name:'Jerry'}]);
 	document.getElementById('list').innerHTML = html;
-	</code></pre>
-##结果：
+</code></pre>
+##结果
 	<pre><code>
 	<ul id="list">
 	    <li>
