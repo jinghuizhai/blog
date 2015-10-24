@@ -37,8 +37,11 @@ h1,h2,h3,h4,h5,h6{
 	text-shadow: 0 1px 3px rgba(0,0,0,.5);
 	margin: 0 0 0.5em 0;
 }
+pre{
+	padding:10px;
+}
 code{
-	padding: 10px 5px;
+	padding: 5px 5px;
 	font-size: 14px;
 	font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
 	overflow: auto;
@@ -80,4 +83,30 @@ p{
 .footer{
 	text-align: center;
 	color:#888;
+	font-weight: 300;
+	font-size: 12px;
+	margin-top: 20px;
 }
+/*------------------------------libs begin---------------------------*/
+.l{
+	float: left;
+}
+.r{
+	float: right;
+}
+.f12{
+	font-size: 12px;
+}
+.f14{
+	font-size: 14px;
+}
+.mt20{
+	margin-top: 20px;
+}
+.mb20{
+	margin-bottom: 20px;
+}
+.tc{
+	text-align: center;
+}
+/*------------------------------ libs end ---------------------------*/
