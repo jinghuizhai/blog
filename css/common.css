@@ -66,6 +66,9 @@ p{
 .nav{
 	margin-bottom: 20px;
 }
+li{
+	line-height: 1.5em;
+}
 .nav li{
 	list-style-type: none;
 	float: left;
