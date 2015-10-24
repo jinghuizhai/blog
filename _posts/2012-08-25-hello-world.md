@@ -7,3 +7,4 @@ title: 你好，世界
 	list = []
 	for l in list:
 		print l
+[这是一个链接](http://www.baidu.com)
