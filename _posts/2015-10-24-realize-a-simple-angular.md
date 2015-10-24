@@ -6,6 +6,7 @@ title: angularjs的简单实现
 很多人喜欢google的angularjs，它真正实现了前后端的分离，后端人员再也不用再html页面里填充杂乱的标签。angular对搜索引擎不友好，非常适合于后端的单页面应用。在使用angulajs以前，我们想把数据插入到div中，只能通过拼接字符串的方式，这对前端和后端都是噩梦。
 
 我们可以借用angularjs的思想做一些东西，比如动态组装一个div，如果一个页面中这样的需求很少，而去引用一个angularjs文件的话是很不划算的。那就自己实现一个：
+##javascipt
 	function model(el,data){
 	    var objs = el.match(/[{]{2}\s*([^{}]+)\s*[}}]{2}/g),
 	        ret = [];
