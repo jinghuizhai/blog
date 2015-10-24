@@ -34,15 +34,20 @@ angular对搜索引擎不友好，非常适合于后端的单页面应用。在�
 	}
 </code></pre>
 ##div:
+	<pre><code>
 	<ul id="list">
 	    <li>
 	        {{ name }}
 	    </li>
 	</ul>
+	</code></pre>
 ##调用：
+	<pre><code>
 	var html = model(document.getElementById('list').innerHTML,[{name:'Tom'},{name:'Jack'},{name:'Jerry'}]);
 	document.getElementById('list').innerHTML = html;
+	</code></pre>
 ##结果：
+	<pre><code>
 	<ul id="list">
 	    <li>
 	        Tom
@@ -54,5 +59,6 @@ angular对搜索引擎不友好，非常适合于后端的单页面应用。在�
 	        Jerry
 	    </li>
 	</ul>
+	</code></pre>
 _______________
 实际上，model函数与angularjs的实现原理是不同的，但在紧要关头，却能解决特殊的问题。函数要用在生产环境中需要改进。
