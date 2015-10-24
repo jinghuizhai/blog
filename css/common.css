@@ -46,11 +46,12 @@ pre,code{
 }
 pre{
 	padding:10px;
+	overflow: auto;
+	width: 100%;
+	box-sizing:border-box;
 }
 code{
-	padding: 5px 5px;
 	font-size: 14px;
-	overflow: auto;
 	background: #333;
 	color: #fff;
 	border-radius: 5px;
