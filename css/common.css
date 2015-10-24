@@ -32,16 +32,13 @@ a{
 a:hover{
 	color:#f90;
 }
-h1{
-
-}
 h1,h2,h3,h4,h5,h6{
 	color:#ddd;
 	text-shadow: 0 1px 3px rgba(0,0,0,.5);
 	margin: 0 0 0.5em 0;
 }
-pre{
-	padding: 10px;
+code{
+	padding: 10px 5px;
 	font-size: 14px;
 	font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
 	overflow: auto;
