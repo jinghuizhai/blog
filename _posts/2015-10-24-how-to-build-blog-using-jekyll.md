@@ -7,4 +7,3 @@ title: 如何用jekyll搭建博客
 一开始觉得用`jekyll`搭建过于复杂，于是用了[hugo](https://gohugo.io/),这篇[博客](http://blog.coderzh.com)介绍的很清楚。
 遗憾的是，我搭建成功后，一直无法生成html文件，只能写原生的html页面，无法使用`markdown`。所以，还用回了jekyll,发现并不复杂。
 
-
