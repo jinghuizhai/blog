@@ -6,7 +6,7 @@ title: 用javascript,php和python写乘法口诀
 <p>
     PHP:
 </p>
-<pre class="brush:php;toolbar:false">function mutil_table($max){
+<pre class="brush:php;toolbar:false"><code>function mutil_table($max){
 	for($i = 1;$i&lt;$max;$i++){
 			$arr = array();
 			for($j = 1;$j&lt;$i+1;$j++){
@@ -15,11 +15,11 @@ title: 用javascript,php和python写乘法口诀
 			echo join($arr,&#39;,&#39;).&quot;&lt;br&gt;&quot;;
 		}
 	}
-调用：mutil_table(9);</pre>
+调用：mutil_table(9);</code></pre>
 <p>
     javascript:<br/>
 </p>
-<pre class="brush:js;toolbar:false">function mutil_table(max){
+<pre class="brush:js;toolbar:false"><code>function mutil_table(max){
 				for(var i = 1;i&lt;max;i++){
 					var arr = [];
 					for(var j = 1;j&lt;i+1;j++){
@@ -28,30 +28,30 @@ title: 用javascript,php和python写乘法口诀
 					console.log(arr.join(&#39;,&#39;));
 				}
 			}
-调用：mutil_table(9);</pre>
+调用：mutil_table(9);</code></pre>
 <p>
     python:
 </p>
 <p>
     不想写函数了：
 </p>
-<pre class="brush:python;toolbar:false;">list = [&quot;%s*%s=%s&quot; % (m,n,m*n) for m in range(1,10) for n in range(1,10)]</pre>
+<pre class="brush:python;toolbar:false;"><code>list = [&quot;%s*%s=%s&quot; % (m,n,m*n) for m in range(1,10) for n in range(1,10)]</code></pre>
 <p>
     是啊，格式太不讲究了，改良下，但是一改良，就会变长，好像没有一句话写出来那么酷了：
 </p>
-<pre class="brush:python;toolbar:false">for x in range(1,10):
+<pre class="brush:python;toolbar:false"><code>for x in range(1,10):
 	r = range(1,x+1)
 	elist = []
 	for y in r:
 		str = &#39;%s*%s=%s&#39; % (x,y,x*y)
 		elist.append(str)
-	print &#39;,&#39;.join(elist)</pre>
+	print &#39;,&#39;.join(elist)</code></pre>
 <p>
     实际上，还有一个办法：
 </p>
-<pre class="brush:python;toolbar:false">list = map(lambda x:[&quot;%s*%s=%s&quot; % (y,len(x),y*len(x)) for y in x],map(lambda x:range(1,x+1),range(1,10)))
+<pre class="brush:python;toolbar:false"><code>list = map(lambda x:[&quot;%s*%s=%s&quot; % (y,len(x),y*len(x)) for y in x],map(lambda x:range(1,x+1),range(1,10)))
 for x in list:
-	print x</pre>
+	print x</code></pre>
 <p>
     <br/>
 </p>

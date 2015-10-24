@@ -6,12 +6,12 @@ title: 用python写斐波那契数列和杨辉三角
 <p>
     斐波那契数列：
 </p>
-<pre class="brush:python;toolbar:false">def fab(max):
+<pre class="brush:python;toolbar:false"><code>def fab(max):
 	n,a,b = 0,0,1
 	while n&lt;max:
 		yield b
 		a,b = b,a+b
-		n = n+1</pre>
+		n = n+</code></pre>
 <p>
     调用：<br/>
 </p>
@@ -21,7 +21,7 @@ for x in g:
 <p>
     杨辉三角：
 </p>
-<pre class="brush:python;toolbar:false">def triangles(max):
+<pre class="brush:python;toolbar:false"><code>def triangles(max):
 	n,a,b = 0,[1],[]
 
 	while n &lt; max:
@@ -34,13 +34,13 @@ for x in g:
 				b.append(value+a[index+1])
 
 		a,b = b,[]
-		n = n+1</pre>
+		n = n+1</code></pre>
 <p>
     调用：<br/>
 </p>
-<pre class="brush:python;toolbar:false">g = triangles(10)
+<pre class="brush:python;toolbar:false"><code>g = triangles(10)
 for x in g:
-	print x</pre>
+	print x</code></pre>
 <p>
     <br/>
 </p>
