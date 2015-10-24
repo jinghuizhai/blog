@@ -41,15 +41,16 @@ h1,h2,h3,h4,h5,h6{
 	margin: 0 0 0.5em 0;
 }
 code{
+	
+}
+pre{
+	padding: 10px 0;
+	width: 100%;
+	overflow: auto;
 	background: #333;
 	color: #fff;
 	border-radius: 5px;
 	box-shadow: inset 0 1px 10px rgba(0,0,0,.3),
 				0 1px 0 rgba(255,255,255,.1),
 				0 -1px 0 rgba(0,0,0,.5);
-}
-pre{
-	padding: 10px 0;
-	width: 100%;
-	overflow: auto;
 }
