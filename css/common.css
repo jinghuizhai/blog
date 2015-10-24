@@ -37,13 +37,19 @@ h1,h2,h3,h4,h5,h6{
 	text-shadow: 0 1px 3px rgba(0,0,0,.5);
 	margin: 0 0 0.5em 0;
 }
+pre,code{
+  display: inline-block;
+  font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
+  font-size: 14px;
+  padding: 0 .5em;
+  line-height: 1.8em;
+}
 pre{
 	padding:10px;
 }
 code{
 	padding: 5px 5px;
 	font-size: 14px;
-	font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
 	overflow: auto;
 	background: #333;
 	color: #fff;
