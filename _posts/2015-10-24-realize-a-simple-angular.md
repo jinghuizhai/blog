@@ -9,7 +9,7 @@ angular对搜索引擎不友好，非常适合于后端的单页面应用。在�
 我们可以借用angularjs的思想做一些东西，比如动态组装一个div，如果一个页面中这样的需求很少，
 而去引用一个angularjs文件的话是很不划算的。那就自己实现一个:
 ##javascipt:
-	function model(el,data){
+<pre><code>function model(el,data){
 	    var objs = el.match(/[{]{2}\s*([^{}]+)\s*[}}]{2}/g),
 	        ret = [];
 	    if(objs){
@@ -32,6 +32,7 @@ angular对搜索引擎不友好，非常适合于后端的单页面应用。在�
 	        return '';
 	    }
 	}
+</code></pre>
 ##div:
 	<ul id="list">
 	    <li>
@@ -53,5 +54,5 @@ angular对搜索引擎不友好，非常适合于后端的单页面应用。在�
 	        Jerry
 	    </li>
 	</ul>
-***
+_______________
 实际上，model函数与angularjs的实现原理是不同的，但在紧要关头，却能解决特殊的问题。函数要用在生产环境中需要改进。
