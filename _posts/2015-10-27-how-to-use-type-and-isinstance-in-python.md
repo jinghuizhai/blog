@@ -2,15 +2,15 @@
 layout: default
 title: 如何使用python的type和isinstance
 ---
-#如何使用python的type和isinstance
-type函数和isinstance函数都是用来判断变量的所属类型，区别如下：
-* type通过用来判断基本类型，也可以判断函数或类（像javascript中的typeof）
-* isintance通常用来判断类，也可以判断基本类型 （像javascript中的instanceof）
-##type的用法
-	print type(1) #<class 'int'>
-	print type('str') #<class 'str'>
-	print type(None) #<type(None) 'NoneType'>
-type()返回的是一个类，所以`type(1) == int`的结果是`True`
+#如何使用python的type和isinstance  
+type函数和isinstance函数都是用来判断变量的所属类型，区别如下：  
+* type通过用来判断基本类型，也可以判断函数或类（像javascript中的typeof）  
+* isintance通常用来判断类，也可以判断基本类型 （像javascript中的instanceof）  
+##type的用法  
+	print type(1) #<class 'int'>  
+	print type('str') #<class 'str'>  
+	print type(None) #<type(None) 'NoneType'>  
+type()返回的是一个类，所以`type(1) == int`的结果是`True`  
 type()也可以用来判断函数和对象
 	type(abs) #<class 'builtin_function_or_method'>
 	type(a) #<class '__main__.Animal'>
