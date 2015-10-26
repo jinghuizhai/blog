@@ -63,3 +63,16 @@ print tom_score</code>
 <p>
     是为了检查参数的正确性。
 </p>
+<p>比_score的命名方式更严谨一点的是用__score</p>
+<pre><code>
+	class Student(object):
+	def set_score(self,score):
+		self.__score = score
+	def get_score(self):
+		return self.__score
+	tom = Student()
+	tom.set_score(60)
+</code></pre>
+<p>这个时候如果<code>print tom.__score</code>会显示错误，提示没有这个属性，然而这并不意味在外部不通过get方法访问不到</p>
+<hr/>
+<p>还是那句话，一切凭自觉</p>
