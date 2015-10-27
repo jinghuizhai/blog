@@ -33,5 +33,18 @@
 		<div class="footer">
 			all rights dapigou.com
 		</div>
+		<script type="text/javascript">
+		//去掉code中的换行符
+		window.onload = function(){
+			var codes = document.getElementsByTagName('code');
+			for(var i = 0,len = codes.length;i<len;i++){
+				var code = codes[i],
+					html = code.innerText || code.textContent;
+				html = html.replace(/^\n+|\n+$/g,'');
+				if code.innerText code.innerText = html;
+				else code.textContent = html;
+			}
+		};
+		</script>
 　　</body>
 </html>
