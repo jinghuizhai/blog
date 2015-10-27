@@ -41,7 +41,7 @@
 				var code = codes[i],
 					html = code.innerText || code.textContent;
 				html = html.replace(/^\n+|\n+$/g,'');
-				if code.innerText code.innerText = html;
+				if(code.innerText) code.innerText = html;
 				else code.textContent = html;
 			}
 		};
