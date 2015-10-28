@@ -7,14 +7,12 @@ mysql和mysqli是php操作数据库的扩展（extension）
 <h2>php-mysql</h2>
 mysql是最原始的扩展（extension），用法非常常见：
 <pre><code>
-<?php
-	mysql_connect($host,$user,$pass);
-	$result = mysql_query('select * from `user`');
-	while($row = mysql_fetch_array($result,MYSQL_ASSOC)){
-		echo $row['name'];
-	}
-	mysql_free_result($result);
-?>
+mysql_connect($host,$user,$pass);
+$result = mysql_query('select * from `user`');
+while($row = mysql_fetch_array($result,MYSQL_ASSOC)){
+	echo $row['name'];
+}
+mysql_free_result($result);
 </code></pre>
 以上连接数据库的方式是不能绑定参数(bind column)的，所以拼接参数的时候
 非常容易sql注入(sql Injection),所以用<code>mysql_escape_string()</code>
