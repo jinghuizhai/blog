@@ -1,0 +1,82 @@
+---
+layout: default
+title: jQuery的难点和痛点
+---
+#jQuery的难点和痛点
+在我的项目中往往有这样的需求：
+<ul>
+	<li>单页面应用，往往选择mvc框架，首选google的angularjs</li>
+	<li>展示性页面，js应用不多不少，没有必要引入jQuery，因为jQuery远远比我的js代码多，但是我又需要选择器去规避不同浏览器的兼容漏洞</li>
+	<li>引入还是不引入jQuery，这是个问题</li>
+</ul>
+<h2>所以我花了一些时间，写了一个自己的lib，它是一个简单的选择器，它有以下特点：</h2>
+<ul>
+	<li>选择器少（只有id选择器），给需求明确的人，给非常清楚自己要做什么的人。</li>
+	<li><strong>对dom节点的操作只要原生方法可以无差别的实现，则使用原生方法（稍候解释）</strong></li>
+	<li>必要的dom操作</li>
+	<li>添加类，删除类</li>
+	<li>添加css，删除css</li>
+	<li>ajax：get和post请求</li>
+	<li>简单的动画</li>
+	<li>事件监听</li>
+	<li>最酷的是，实现了jQuery的<code>$(document).ready(fn)</code></li>
+</ul>
+<h2>这个lib的主要方法包括：</h2>
+<ul>
+	<li>get</li>
+	<li>ready</li>
+	<li>browser</li>
+	<li>validate</li>
+	<li>getViewport</li>
+	<li>getPagearea</li>
+	<li>screen</li>
+	<li>css</li>
+	<li>nth</li>
+	<li>first</li>
+	<li>last</li>
+	<li>prev</li>
+	<li>next</li>
+	<li>animate</li>
+	<li>hasClass</li>
+	<li>addClass</li>
+	<li>removeClass</li>
+	<li>toggleClass</li>
+	<li>toggle</li>
+	<li>html</li>
+	<li>addEvent</li>
+	<li>removeEvent</li>
+	<li>scrollTo</li>
+	<li>isfn</li>
+	<li>isarr</li>
+	<li>isobj</li>
+	<li>isstr</li>
+	<li>hide</li>
+	<li>show</li>
+	<li>showi</li>
+	<li>ajax</li>
+	<li>setCookie</li>
+	<li>getCookie</li>
+	<li>GET</li>
+	<li>POST</li>
+</ul>
+方法与jQuery相似，然而使用方法不同。这个lib不是用jQuery的链式操作，每次调用z的方法，并不会在内部new一个z的实例。
+而是仅仅是一个函数。与google的closure的函数库类似。
+<h2>使用方法：</h2>
+选择器：<code>var ele = z.get('test');</code>
+添加类：<code>z.addClass(ele,'wrap')</code>
+ajax之get:<code>z.GET(url,{},fn)</code>
+ajax之post:<code>z.POST(url,{},fn)</code>
+<h2>我在写这个lib过程中的难点</h2>
+<p>
+我们知道，原生的javascript中，我们只需要将所有的代码扔到window.onload中就可以了。
+但是这个方法是在所有的节点包括图片加载完成后才会执行，这意味着如果用户网络过慢，他要等
+十几秒后图片加载完成了，才能看到姗姗来迟的js效果。所以正确的处理方法是只要dom节点准备完毕，css渲染
+完毕就要执行js。
+</p>
+<p>在jQuery中，我们直接把代码放入<code>$(document).ready()</code>中，而且重复调用ready方法并不会覆盖之前传入的函数，时间一到，所以传入
+的函数就会依次执行</p>
+<p>这是第一个难点</p>
+<p>第二个是，同一个dom节点可能同一个动作有不同的事件，如果用普通方法绑定，就会后绑定的覆盖先绑定的函数，解决的办法是用对象（字典）做缓存，存储事件，然后依次执行</p>
+<p>当然，难点已经解决，请大家看[源码](https://github.com/jinghuizhai/quick-selector),但是我没有实现第二个难点，原因是，项目中用不到，但是不难实现，可以看源码注释</p>
+
+
