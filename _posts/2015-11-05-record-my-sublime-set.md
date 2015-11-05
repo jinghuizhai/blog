@@ -1,6 +1,6 @@
 ---
-layout:default
-title:记录下我的sublimeText3设置
+layout: default
+title: 记录下我的sublimeText3设置
 ---
 #记录下我的sublimeText3设置
 setting default:
