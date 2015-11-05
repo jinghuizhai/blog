@@ -54,7 +54,7 @@ zoom属性（将元素放大2倍）在chrome和opera中都有作用（虽然zoom
 	</li>
 </ul>
 <h2>如何用inline-block实现列表布局</h2>
-<img src="../img/2015-11-05-code.png"/>
+<img src="https://raw.githubusercontent.com/jinghuizhai/jekyll_demo/gh-pages/img/2015-11-05-code.png"/>
 <br/>
 如果是lt IE8，需要加上<code>display:inline;</code>,但是不要写在同一个代码块中。
 <hr/>
