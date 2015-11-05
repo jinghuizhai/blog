@@ -53,6 +53,14 @@ zoom属性（将元素放大2倍）在chrome和opera中都有作用（虽然zoom
 		</ul>
 	</li>
 </ul>
+<h2>如何用inline-block实现列表布局</h2>
+<pre><code>
+<div style="font-size:0">
+	<div style="font-size:12px;display: inline-block">li-1</div>
+	<div style="font-size:12px;display: inline-block">li-2</div>
+</div>
+</code></pre>
+如果是lt IE8，需要加上<code>display:inline;</code>,但是不要写在同一个代码块中。
 <hr/>
 其实，还有一个最好的清浮动办法：lt IE8禁止访问。如果所有的公司、网站都这样做，互联网会变得更好，用户的体验也是。
 <p>
