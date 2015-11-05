@@ -43,11 +43,11 @@ zoom属性（将元素放大2倍）在chrome和opera中都有作用（虽然zoom
 			<li>
 				再为现代浏览器加上伪类：
 				<pre><code>
-					.fix:after{
-						display:table;
-						content:''
-						clear:both
-					}
+.fix:after{
+	display:table;
+	content:''
+	clear:both
+}
 				</code></pre>
 			</li>
 		</ul>
