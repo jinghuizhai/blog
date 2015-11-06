@@ -35,6 +35,6 @@ sys.path.insert(0,'..')
 from model.animal import Animal
 </code></pre>
 <hr/>
-notice:一个文件夹（folder）对外要呈现为一个包(package),需要在文件夹中包含__init__.py文件，文件可为空。
+notice:一个文件夹(folder)对外要呈现为一个包(package),需要在文件夹中包含__init__.py文件，文件可为空。
 <br/>
 完。
