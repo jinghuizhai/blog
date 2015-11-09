@@ -1,6 +1,6 @@
 ---
 layout: default
-tite: 怎么样在github建立博客
+title: 怎么样在github建立博客
 ---
 #怎么样在github建立博客
 该说的搜索引擎都能搜到，如果看阮一峰的日志，就更能了解了。在他的博客里搜索jekyll_demo。
