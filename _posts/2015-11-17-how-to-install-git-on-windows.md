@@ -1,8 +1,8 @@
 ---
 layout: default
-title: '如果安装git并连接到github'
+title: '如何安装git并连接到github'
 ---
-#如果安装git并连接到github
+#如何安装git并连接到github
 <h2>下载msysgit</h2>
 (http://msysgit.github.io/)[github]
 如果不能下载，可以在很多地方搜索到。
