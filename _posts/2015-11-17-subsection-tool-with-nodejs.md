@@ -10,7 +10,7 @@ var fs = require('fs');
 
 fs.readFile('test.md','utf8',function(err,data){
 	if(err) throw err;
-	var result = data.match(/<div>(.*)<\/div>/);
+	var result = data.match(/<some ele>(.*)<\/some ele>/);
 	if(result[1]){
 		result = result[1];
 		var arr = result.split('。');
