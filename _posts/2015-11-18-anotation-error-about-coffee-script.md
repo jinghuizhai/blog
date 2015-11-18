@@ -32,9 +32,9 @@ add = (x,y) ->
 (function(){
 	var add;
 	add = function(x,y){
-		#
+		/*
 		this is a ...
-		#
+		*/
 		return x+y;
 	};
 }).call(this);
