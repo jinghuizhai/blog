@@ -3,15 +3,65 @@ layout: default
 title: '时间复杂度'
 ---
 #时间复杂度
-                        
-                        <h2 style="margin-top: 1.3em; margin-bottom: 1em; font-weight: bold; font-size: 1.4em; white-space: normal; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238);">前言一</h2><p style="margin: 1.2em 0px !important;">很多搞 iOS 开发的同学都没有学过算法，有一些甚至没有学过数据结构。在很多人的观念中，算法和数据结构只是在面试的时候有用。</p><p style="margin: 1.2em 0px !important;">这些人的想法对吗？在我看来，也对，也不对。</p><p style="margin: 1.2em 0px !important;">对于 iOS 开发来说，大多数时候都不需要算法和数据结构知识，但是如果你了解了算法和数据结构知识，在一些关键时候，这些知识会影响你的产品质量和开发效率。</p><p style="margin: 1.2em 0px !important;">很多人排斥学习这方面的知识，除了用得地方少之外，还有一个原因就是这部分知识比较难。</p><p style="margin: 1.2em 0px !important;">所以我打算写一个轻松学习数据结构和算法的系列，结合 iOS 开发的故事，让大家看看工作中有哪些地方会接触到数据结构和算法。</p><p style="margin: 1.2em 0px !important;">这是本系列的第二篇，我们讲讲时间复杂度。</p><h2 style="margin: 1.3em 0px 1em; padding: 0px; font-weight: bold;font-size: 1.4em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238);">前言二</h2><p style="margin: 1.2em 0px !important;">「时间复杂度」这个名称对于非计算机专业的人绝对是一个重磅炸弹，一般在面试的时候，大家对于算法题都还是能想到一些可行的解法的。但是只要面试官一问起「时间复杂度」，好多非科班出身的同学就会马上缴械投降了。</p><p style="margin: 1.2em 0px !important;">那么时间复杂度真的有那么重要吗？它在实际工作中到底有什么用？我们来看看下面几个故事。</p><h2 style="margin: 1.3em 0px 1em; padding: 0px; font-weight: bold;font-size: 1.4em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238);">故事一</h2><p style="margin: 1.2em 0px !important;">我在公司里常常会指导一些 iOS 开发的新人，在我带的 iOS 开发新人里面，有一个很聪明的女生，我们这里叫她「Liu 同学」吧。</p><p style="margin: 1.2em 0px !important;">Liu 同学有一次由于业务需要，得在 iOS 端做一个图片裁剪的工作，图片的内容是白底黑字，她需要写算法把图片周围的空白部分裁剪掉，保留有字的部分。</p><p style="margin: 1.2em 0px !important;">因为边缘的文字位置大概是知道的，所以她写了一个二分的算法，从图象的边缘文字开始，用二分的方式来寻找边界。当她和我讨论的时候，我问了以下几个问题：</p><ul style="margin: 1.2em 0px;padding-left: 2em;" class=" list-paddingleft-2"><li><p>这个图片宽高大概是多少？她回答：宽度约是 600，高度约是 100。</p></li><li><p>二分的的区域大概是多少？她回答：因为边缘的文字位置大概是知道的，所以二分的高度大概是 50，宽度 600。</p></li></ul><p style="margin: 1.2em 0px !important;">于是，我告诉她，即使你完全暴力遍历这个二分区域，也只需要检查 600 * 50 = 30000 个点。对于计算机来说，这点运算量根本不值得花精力写二分查找算法，她听了恍然大悟。</p><p style="margin: 1.2em 0px !important;">很多时候，懂时间复杂度并不是让你写复杂的代码，而是让你避免写复杂的代码。</p><h2 style="margin: 1.3em 0px 1em; padding: 0px; font-weight: bold;font-size: 1.4em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238);">故事二</h2><p style="margin: 1.2em 0px !important;">Redis 是一个优秀的服务器组件，你可以把它当缓存使用，也可以把它当作一个 Key/Value 内存数据库来使用。由于它支持持久化，所以你也不用担心内存中的数据丢失。</p><p style="margin: 1.2em 0px !important;">我有一次阅读到了 Redis 的源码，发现 Redis 在实现字典时选择了一种名为 Skiplist 的数据结构，而不是被广泛使用的红黑树。作者在被问到为什么选择 Skiplist 时答到：「They are simpler to implement, debug, and so forth」。</p><p style="margin: 1.2em 0px !important;">所以，如果你了解时间复杂度，你就可以更有主见地，根据具体情况来做数据结构的选择，而不是盲目听信权威。</p><p style="margin: 1.2em 0px !important;">它对我产生的什么帮助呢？在我做移动端开发的时候，我发现移动端的业务场景处理的数据量都非常小，所以我就基于 SQLite 做了一个非常简单的 Key/Value 存储项目 YTKKeyValueStore ( <a>https://github.com/yuantiku/YTKKeyValueStore</a> )，我当然知道这里面有性能损失，但是我在开发之前，就能够依据自己的数据结构经验，判断出这一点性能损失是能够接受的。</p><h2 style="margin: 1.3em 0px 1em; padding: 0px; font-weight: bold;font-size: 1.4em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238);">故事三</h2><p style="margin: 1.2em 0px !important;">我在高中的时候就对计算机产生了兴趣，当时报名参加了学校的编程兴趣班，并且参加过国家举办的 NOIP（全国青少年信息学奥林匹克联赛）。当时的 NOIP 比赛需要大家的解题代码不能运行时间过久，但是我当时一直不知道如何估计自己代码的运行时间。</p><p style="margin: 1.2em 0px !important;">直到进入大学参加 ACM，才从培训中了解到，可以用一些简单的办法的估计程序的运行时间，当时大家流传着一秒钟 大概等于「运行一千万次循环」的时间估算方法。直到那时，我才真正对时间复杂度有了实用性上的认识。</p><p style="margin: 1.2em 0px !important;">当时做竞赛题目有一些非常简单的技巧：即根据题目给出的数据范围来猜解法的时间复杂度。</p><p style="margin: 1.2em 0px !important;">举个例子，比如一道题目的输入是一个 A，这个 A 的范围是 0 ~ 100 万，那么在一秒钟的时间限制下，你就只能设计 O(N) 时间复杂度以下的算法。因为如果你的算法复杂度是 O(N^2)，那么运行时间肯定会超过一秒钟。</p><p style="margin: 1.2em 0px !important;">在工作中，我们也会运用这些技巧来估计海量数据的处理时间。我还记得上周我们要在 Hive （一种分布式计算框架）中处理 5000 万条数据，每条数据大概了 100K。我们设计的算法是 O(N) 时间复杂度的，然后我们简单算了一下，如果不用 Hive 得话得运行好几天，所以虽然麻烦一些，但我们就坚定地选择了写分布式计算程序。</p><p style="margin: 1.2em 0px !important;">我的估算过程如下：<br  />因为算法是 O(N) 的，所以我们一共需要运算：5000 万 x 100K 次，我们之前说了，1000 万次运算大概要 1 秒，所以我们需要 500000 秒。一天大概是 8 万秒，所以大概需要运行 6 天。</p><h2 style="margin: 1.3em 0px 1em; padding: 0px; font-weight: bold;font-size: 1.4em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238);">时间复杂度</h2><p style="margin: 1.2em 0px !important;">在工作中，「时间复杂度」的用处在很多时候就像上面那些故事那样，决定了我们用什么样的代价来写代码。</p><p style="margin: 1.2em 0px !important;">我很早以前很天真的认为，写代码只需要考虑时间复杂度和空间复杂度就够了。而大多数的权衡，都是在时间和空间上做选择，一般时间复杂度优的，占用空间可能会更大一些。</p><p style="margin: 1.2em 0px !important;">但是我错了，我们除了要考虑程序的运行时间、占用的内存外，还需要考虑该算法实现的成本！一个复杂的算法，在实现上是很可能写出 Bug 的，而我们的工作时间有限，如果能够写简单的算法就能搞定需求，为什么我们要写复杂的代码？</p><p style="margin: 1.2em 0px !important;">所以，时间复杂度真正的用处，是让我们在写代码之前，就明白计算机运行这些代码的时间。这样，我们就能根据具体的业务需求，选择最合适的写代码的方式，</p><h2 style="margin: 1.3em 0px 1em; padding: 0px; font-weight: bold;font-size: 1.4em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238);">理论</h2><p style="margin: 1.2em 0px !important;">我们就实用的角度，简单学习一下时间复杂度的理论吧。</p><p style="margin: 1.2em 0px !important;">时间复杂度是一个偏理论的概念，我们要描述它，首先需要了解它的描述方法，即：「大 O 表示法」。</p><p style="margin: 1.2em 0px !important;">「大 O 表示法」的准确的数学描述方式非常枯燥，我在这里就不贴出来凑字数了，其实大 O 表示法的意思挺简单的，就是表示：随着输入的值变化，程序运行所需要的时间与输入值的变化关系。如果不理解也没关系，我们看两行代码就很容易懂了。</p><p style="margin: 1.2em 0px !important;">我们先看第一个代码，这是一个函数，输入一个数组，输出这个数组里元数的和。</p><pre style="font-size: 0.85em; font-family: Consolas, Inconsolata, Courier, monospace;font-size: 1em; line-height: 1.2em;margin: 1.2em 0px;"><code style="font-size: 0.85em; font-family: Consolas, Inconsolata, Courier, monospace;margin: 0px 0.15em; padding: 0px 0.3em; white-space: pre-wrap; border: 1px solid rgb(234, 234, 234); border-radius: 3px; display: inline; background-color: rgb(248, 248, 248);white-space: pre; overflow: auto; border-radius: 3px; border: 1px solid rgb(204, 204, 204); padding: 0.5em 0.7em; display: block !important;">int count(int a[], int n) {
+<h2 >前言一</h2>
+<p>很多搞 iOS 开发的同学都没有学过算法，有一些甚至没有学过数据结构。在很多人的观念中，算法和数据结构只是在面试的时候有用。</p>
+<p>这些人的想法对吗？在我看来，也对，也不对。</p>
+<p>对于 iOS 开发来说，大多数时候都不需要算法和数据结构知识，但是如果你了解了算法和数据结构知识，在一些关键时候，这些知识会影响你的产品质量和开发效率。</p>
+<p>很多人排斥学习这方面的知识，除了用得地方少之外，还有一个原因就是这部分知识比较难。</p>
+<p>所以我打算写一个轻松学习数据结构和算法的系列，结合 iOS 开发的故事，让大家看看工作中有哪些地方会接触到数据结构和算法。</p>
+<p>这是本系列的第二篇，我们讲讲时间复杂度。</p>
+<h2 >前言二</h2>
+<p>「时间复杂度」这个名称对于非计算机专业的人绝对是一个重磅炸弹，一般在面试的时候，大家对于算法题都还是能想到一些可行的解法的。但是只要面试官一问起「时间复杂度」，好多非科班出身的同学就会马上缴械投降了。</p>
+<p>那么时间复杂度真的有那么重要吗？它在实际工作中到底有什么用？我们来看看下面几个故事。</p>
+<h2 >故事一</h2>
+<p>我在公司里常常会指导一些 iOS 开发的新人，在我带的 iOS 开发新人里面，有一个很聪明的女生，我们这里叫她「Liu 同学」吧。</p>
+<p>Liu 同学有一次由于业务需要，得在 iOS 端做一个图片裁剪的工作，图片的内容是白底黑字，她需要写算法把图片周围的空白部分裁剪掉，保留有字的部分。</p>
+<p>因为边缘的文字位置大概是知道的，所以她写了一个二分的算法，从图象的边缘文字开始，用二分的方式来寻找边界。当她和我讨论的时候，我问了以下几个问题：</p>
+<ul  ><li><p>这个图片宽高大概是多少？她回答：宽度约是 600，高度约是 100。</p>
+</li>
+<li><p>二分的的区域大概是多少？她回答：因为边缘的文字位置大概是知道的，所以二分的高度大概是 50，宽度 600。</p>
+</li>
+</ul>
+<p>于是，我告诉她，即使你完全暴力遍历这个二分区域，也只需要检查 600 * 50 = 30000 个点。对于计算机来说，这点运算量根本不值得花精力写二分查找算法，她听了恍然大悟。</p>
+<p>很多时候，懂时间复杂度并不是让你写复杂的代码，而是让你避免写复杂的代码。</p>
+<h2 >故事二</h2>
+<p>Redis 是一个优秀的服务器组件，你可以把它当缓存使用，也可以把它当作一个 Key/Value 内存数据库来使用。由于它支持持久化，所以你也不用担心内存中的数据丢失。</p>
+<p>我有一次阅读到了 Redis 的源码，发现 Redis 在实现字典时选择了一种名为 Skiplist 的数据结构，而不是被广泛使用的红黑树。作者在被问到为什么选择 Skiplist 时答到：「They are simpler to implement, debug, and so forth」。</p>
+<p>所以，如果你了解时间复杂度，你就可以更有主见地，根据具体情况来做数据结构的选择，而不是盲目听信权威。</p>
+<p>它对我产生的什么帮助呢？在我做移动端开发的时候，我发现移动端的业务场景处理的数据量都非常小，所以我就基于 SQLite 做了一个非常简单的 Key/Value 存储项目 YTKKeyValueStore ( <a>https://github.com/yuantiku/YTKKeyValueStore</a>
+ )，我当然知道这里面有性能损失，但是我在开发之前，就能够依据自己的数据结构经验，判断出这一点性能损失是能够接受的。</p>
+<h2 >故事三</h2>
+<p>我在高中的时候就对计算机产生了兴趣，当时报名参加了学校的编程兴趣班，并且参加过国家举办的 NOIP（全国青少年信息学奥林匹克联赛）。当时的 NOIP 比赛需要大家的解题代码不能运行时间过久，但是我当时一直不知道如何估计自己代码的运行时间。</p>
+<p>直到进入大学参加 ACM，才从培训中了解到，可以用一些简单的办法的估计程序的运行时间，当时大家流传着一秒钟 大概等于「运行一千万次循环」的时间估算方法。直到那时，我才真正对时间复杂度有了实用性上的认识。</p>
+<p>当时做竞赛题目有一些非常简单的技巧：即根据题目给出的数据范围来猜解法的时间复杂度。</p>
+<p>举个例子，比如一道题目的输入是一个 A，这个 A 的范围是 0 ~ 100 万，那么在一秒钟的时间限制下，你就只能设计 O(N) 时间复杂度以下的算法。因为如果你的算法复杂度是 O(N^2)，那么运行时间肯定会超过一秒钟。</p>
+<p>在工作中，我们也会运用这些技巧来估计海量数据的处理时间。我还记得上周我们要在 Hive （一种分布式计算框架）中处理 5000 万条数据，每条数据大概了 100K。我们设计的算法是 O(N) 时间复杂度的，然后我们简单算了一下，如果不用 Hive 得话得运行好几天，所以虽然麻烦一些，但我们就坚定地选择了写分布式计算程序。</p>
+<p>我的估算过程如下：<br  />因为算法是 O(N) 的，所以我们一共需要运算：5000 万 x 100K 次，我们之前说了，1000 万次运算大概要 1 秒，所以我们需要 500000 秒。一天大概是 8 万秒，所以大概需要运行 6 天。</p>
+<h2 >时间复杂度</h2>
+<p>在工作中，「时间复杂度」的用处在很多时候就像上面那些故事那样，决定了我们用什么样的代价来写代码。</p>
+<p>我很早以前很天真的认为，写代码只需要考虑时间复杂度和空间复杂度就够了。而大多数的权衡，都是在时间和空间上做选择，一般时间复杂度优的，占用空间可能会更大一些。</p>
+<p>但是我错了，我们除了要考虑程序的运行时间、占用的内存外，还需要考虑该算法实现的成本！一个复杂的算法，在实现上是很可能写出 Bug 的，而我们的工作时间有限，如果能够写简单的算法就能搞定需求，为什么我们要写复杂的代码？</p>
+<p>所以，时间复杂度真正的用处，是让我们在写代码之前，就明白计算机运行这些代码的时间。这样，我们就能根据具体的业务需求，选择最合适的写代码的方式，</p>
+<h2 >理论</h2>
+<p>我们就实用的角度，简单学习一下时间复杂度的理论吧。</p>
+<p>时间复杂度是一个偏理论的概念，我们要描述它，首先需要了解它的描述方法，即：「大 O 表示法」。</p>
+<p>「大 O 表示法」的准确的数学描述方式非常枯燥，我在这里就不贴出来凑字数了，其实大 O 表示法的意思挺简单的，就是表示：随着输入的值变化，程序运行所需要的时间与输入值的变化关系。如果不理解也没关系，我们看两行代码就很容易懂了。</p>
+<p>我们先看第一个代码，这是一个函数，输入一个数组，输出这个数组里元数的和。</p>
+
+<pre><code>int count(int a[], int n) {
     int result = 0;
     for (int i = 0; i &lt; n; ++i) {
         result += a[i];
     }
     return result;
-}</code></pre><p style="margin: 1.2em 0px !important;">对于这个程序来说，如果它处理 N 个元素求和所花的时间是 T，那么它处理 N <em>  2 个元素的和所花的时间就是 T </em> 2。所以随着 N 变大，时间 T 的变大是与 N 呈「线性」关系的。</p><p style="margin: 1.2em 0px !important;">在时间复杂度中，我们用 O(N) 表示这种「线性」时间复杂度。</p><p style="margin: 1.2em 0px !important;">那是不是所有的函数都是「线性」关系的呢？我们再来看下面的程序。这是一个二分查找程序，从一个有序数组中寻找指定的值。</p><pre style="font-size: 0.85em; font-family: Consolas, Inconsolata, Courier, monospace;font-size: 1em; line-height: 1.2em;margin: 1.2em 0px;"><code style="font-size: 0.85em; font-family: Consolas, Inconsolata, Courier, monospace;margin: 0px 0.15em; padding: 0px 0.3em; white-space: pre-wrap; border: 1px solid rgb(234, 234, 234); border-radius: 3px; display: inline; background-color: rgb(248, 248, 248);white-space: pre; overflow: auto; border-radius: 3px; border: 1px solid rgb(204, 204, 204); padding: 0.5em 0.7em; display: block !important;">// 来自 https://en.wikipedia.org/wiki/Binary_search_algorithm
+}</code>
+</pre>
 
+<p>对于这个程序来说，如果它处理 N 个元素求和所花的时间是 T，那么它处理 N <em>  2 个元素的和所花的时间就是 T </em>
+ 2。所以随着 N 变大，时间 T 的变大是与 N 呈「线性」关系的。</p>
+<p>在时间复杂度中，我们用 O(N) 表示这种「线性」时间复杂度。</p>
+<p>那是不是所有的函数都是「线性」关系的呢？我们再来看下面的程序。这是一个二分查找程序，从一个有序数组中寻找指定的值。</p>
+<pre ><code >// 来自 https://en.wikipedia.org/wiki/Binary_search_algorithm
 int binary_search(int A[], int key, int imin, int imax)
 {
     if (imax &lt; imin) {
@@ -25,4 +75,35 @@ int binary_search(int A[], int key, int imin, int imax)
         else
             return imid;
     }
-}</code></pre><p style="margin: 1.2em 0px !important;">对于这个程序来说，如果它处理 N 个元素求和所花的时间是 T，那么它处理 N <em> 2 个元素的和所花的时间是多少呢？是 T </em> 2 吗？</p><p style="margin: 1.2em 0px !important;">如果头脑算不清楚，我们可以拿实际的数字来实验，二分查找每次（几乎）可以去掉一半的候选数字。所以假如 N = 1024，那么它最多要找多少次呢？答案是 10 次，因为 2^10 = 1024，每次去掉一半，10 次之后就只剩下唯一一个元素了。</p><p style="margin: 1.2em 0px !important;">好，这个时候，如果元素的个数翻一倍，变成 2048 个，那么它最多要找多少次呢？相信大家都能算出来吧？答案是 11 次，因为 2 ^ 11 = 2048。</p><p style="margin: 1.2em 0px !important;">所以在这个例子中，输入的元素个数虽然翻倍，但是程序运行所花的时间却只增加了 1，我们把这种时间复杂度要叫「对数」时间复杂度，用 O(logN) 来表示。</p><p style="margin: 1.2em 0px !important;">除了刚刚讲的「线性」时间复杂度和「对数」时间复杂度。我们还有以下这次常见的时间复度数。</p><p style="margin: 1.2em 0px !important;">「常数」时间复杂度，例如返回一个有序数组中的最小数，这个数因为始终在第一个位置，所以就不会受到数组大小的影响，无论数组多大，我们都可以在一个固定的时间返回结果。</p><p style="margin: 1.2em 0px !important;">「线性对数」时间复杂度，即 O(N*logN)，这个复杂度比较常见，因为常见的高效的排序算法，都是这个时间复杂度，比如快速排序，堆排序，归并排序等。</p><p style="margin: 1.2em 0px !important;">别的时间复杂度还有很多，每个具体的问题，我们都可以通过具体的分析，得到这个问题的时间复杂度。</p><h2 style="margin: 1.3em 0px 1em; padding: 0px; font-weight: bold;font-size: 1.4em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238);">运行时间估算</h2><p style="margin: 1.2em 0px !important;">之前有一个故事中，我提到在 ACM 竞赛中，大家常常简单地把 1000 万次运算当作一秒钟的实际运行时间来估算。这个做法固然是从经验得来的，但是其实我们也可以大概通过计算机的主频来估算过来。</p><p style="margin: 1.2em 0px !important;">计算机的 <a>主频</a> 表示的是每秒钟产生出来的脉冲个数。我的 MacBook Air CPU 主频是 1.7G 的，所以它的 CPU 每秒产生了 17 亿次脉冲。每次脉冲 CPU 可以执行一条基本的汇编指令。而我们在做 ACM 竞赛时，代码长度通常在 100 行左右，一个循环里面的代码差不多是 100 - 200 条汇编指令，所以 1000 万次循环差不多需要 10 亿 - 20 亿次脉冲来执行汇编指令。当然，这只是一个估算，每一个循环指行的时间和这个循环里面执行的代码逻辑密切相关，所以这个办法只是大概估计，不可严格依赖。</p><p style="margin: 1.2em 0px !important;">有人问，会产生这么多汇编代码吗？不信的话，其实你完全可以用 Xcode 试试，试出来的结果只会多不会少。在 Xcode 下用 <code style="font-size: 0.85em; font-family: Consolas, Inconsolata, Courier, monospace;margin: 0px 0.15em; padding: 0px 0.3em; white-space: pre-wrap; border: 1px solid rgb(234, 234, 234); border-radius: 3px; display: inline; background-color: rgb(248, 248, 248);">cmd + opt + enter</code> 选择代码分栏模式，然后在右边编辑器上选择「Assembly」, 就可以方便地看到左边源码对应的汇编代码，如下所示：</p><p style="margin: 1.2em 0px !important;"><img data-s="300,640" data-type="png" data-src="http://mmbiz.qpic.cn/mmbiz/Oib5VlxS0YmLh0KDZkJrDN1fqPkwZ6D7FxiaQw65vasgRaWSkvUiaw3xmHct0ReGlVHTvSiazXZbgJqHwtntlkN1Mg/0?wx_fmt=png" data-ratio="0.24820143884892087" data-w=""  /><br  /></p><h2 style="margin: 1.3em 0px 1em; padding: 0px; font-weight: bold;font-size: 1.4em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238);">总结</h2><p style="margin: 1.2em 0px !important;">总结一下学习时间复杂度的知识对于我们的工作有什么用：</p><ol style="margin: 1.2em 0px;padding-left: 2em;" class=" list-paddingleft-2"><li><p>对于不同的数据规模，能够决策采用不同的解决方案。</p></li><li><p>了解什么情况下用暴力解法就能够解决问题，避免写复杂的代码。</p></li><li><p>在写代码之前，就能够预估程序的运行时间，从而可以知道是否能够满足产品需求。</p></li><li><p>在程序出现性能瓶颈时，能够有解决方案而不是抓瞎。</p></li></ol><p style="margin: 1.2em 0px !important;">当然，对于大部分人，在 99% 的工作时间内，我们只是做做 iOS 的 UI 界面、处理一些业务逻辑、发一些网络请求、存一些数据到 SQLite 中。或许一年之中，用得上这些知识的只有一、两天时间。</p><p style="margin: 1.2em 0px !important;">但是，这某种程度上就决定了一个程序员的层次和水平，你觉得呢？<br  /><br  />全文完。<br  /></p><hr  />
+}</code>
+</pre>
+<p>对于这个程序来说，如果它处理 N 个元素求和所花的时间是 T，那么它处理 N <em> 2 个元素的和所花的时间是多少呢？是 T </em>
+ 2 吗？</p>
+<p>如果头脑算不清楚，我们可以拿实际的数字来实验，二分查找每次（几乎）可以去掉一半的候选数字。所以假如 N = 1024，那么它最多要找多少次呢？答案是 10 次，因为 2^10 = 1024，每次去掉一半，10 次之后就只剩下唯一一个元素了。</p>
+<p>好，这个时候，如果元素的个数翻一倍，变成 2048 个，那么它最多要找多少次呢？相信大家都能算出来吧？答案是 11 次，因为 2 ^ 11 = 2048。</p>
+<p>所以在这个例子中，输入的元素个数虽然翻倍，但是程序运行所花的时间却只增加了 1，我们把这种时间复杂度要叫「对数」时间复杂度，用 O(logN) 来表示。</p>
+<p>除了刚刚讲的「线性」时间复杂度和「对数」时间复杂度。我们还有以下这次常见的时间复度数。</p>
+<p>「常数」时间复杂度，例如返回一个有序数组中的最小数，这个数因为始终在第一个位置，所以就不会受到数组大小的影响，无论数组多大，我们都可以在一个固定的时间返回结果。</p>
+<p>「线性对数」时间复杂度，即 O(N*logN)，这个复杂度比较常见，因为常见的高效的排序算法，都是这个时间复杂度，比如快速排序，堆排序，归并排序等。</p>
+<p>别的时间复杂度还有很多，每个具体的问题，我们都可以通过具体的分析，得到这个问题的时间复杂度。</p>
+<h2 >运行时间估算</h2>
+<p>之前有一个故事中，我提到在 ACM 竞赛中，大家常常简单地把 1000 万次运算当作一秒钟的实际运行时间来估算。这个做法固然是从经验得来的，但是其实我们也可以大概通过计算机的主频来估算过来。</p>
+<p>计算机的 <a>主频</a>
+ 表示的是每秒钟产生出来的脉冲个数。我的 MacBook Air CPU 主频是 1.7G 的，所以它的 CPU 每秒产生了 17 亿次脉冲。每次脉冲 CPU 可以执行一条基本的汇编指令。而我们在做 ACM 竞赛时，代码长度通常在 100 行左右，一个循环里面的代码差不多是 100 - 200 条汇编指令，所以 1000 万次循环差不多需要 10 亿 - 20 亿次脉冲来执行汇编指令。当然，这只是一个估算，每一个循环指行的时间和这个循环里面执行的代码逻辑密切相关，所以这个办法只是大概估计，不可严格依赖。</p>
+<p>有人问，会产生这么多汇编代码吗？不信的话，其实你完全可以用 Xcode 试试，试出来的结果只会多不会少。在 Xcode 下用 <code >cmd + opt + enter</code>
+ 选择代码分栏模式，然后在右边编辑器上选择「Assembly」, 就可以方便地看到左边源码对应的汇编代码，如下所示：</p>
+<p><br /></p>
+<h2 >总结</h2>
+<p>总结一下学习时间复杂度的知识对于我们的工作有什么用：</p>
+<ol  ><li><p>对于不同的数据规模，能够决策采用不同的解决方案。</p>
+</li>
+<li><p>了解什么情况下用暴力解法就能够解决问题，避免写复杂的代码。</p>
+</li>
+<li><p>在写代码之前，就能够预估程序的运行时间，从而可以知道是否能够满足产品需求。</p>
+</li>
+<li><p>在程序出现性能瓶颈时，能够有解决方案而不是抓瞎。</p>
+</li>
+</ol>
+<p>当然，对于大部分人，在 99% 的工作时间内，我们只是做做 iOS 的 UI 界面、处理一些业务逻辑、发一些网络请求、存一些数据到 SQLite 中。或许一年之中，用得上这些知识的只有一、两天时间。</p>
+<p>但是，这某种程度上就决定了一个程序员的层次和水平，你觉得呢？<br  /><br  />全文完。<br  /></p>
+<hr  />
