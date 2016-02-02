@@ -108,6 +108,9 @@ li{
 	margin-top: 20px;
 }
 .home-date{
+	position: absolute;
+	top:3px;
+	right:0;
 	font-size: 10px;
 }
 .home-list li{
@@ -220,5 +223,8 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 	clear:both;
 	display: table;
 	content: '';
+}
+.rel{
+	position: relative;
 }
 /*------------------------------ libs end ---------------------------*/
