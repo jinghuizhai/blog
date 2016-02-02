@@ -114,8 +114,8 @@ li{
 	font-size: 10px;
 }
 .home-list li{
-	line-height: 2em;
-	padding-left: 1em;
+	line-height: 1.2em;
+	padding-left: 0.5em;
 }
 /*
 Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
