@@ -2,7 +2,7 @@ body{
 	margin:0;
 	padding:0;
 	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 21px;
+	font-size: 14px;
 	font-weight: 300;
 	color: #ddd;
 	background: #333;
@@ -44,7 +44,13 @@ h1,h2,h3,h4,h5,h6{
 	color:#ddd;
 	text-shadow: 0 1px 3px rgba(0,0,0,.5);
 	margin: 0 0 0.5em 0;
+	font-family: "microsoft yahei";
 }
+h1{
+	text-align: center;
+	margin:15px 0;
+}
+
 /*pre,code{*/
 /*  display: inline-block;*/
 /*  font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;*/
