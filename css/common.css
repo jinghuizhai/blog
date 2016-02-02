@@ -100,11 +100,6 @@ li{
 				0 1px 0 rgba(255,255,255,.1),
 				0 -1px 0 rgba(0,0,0,.5);
 }
-.fix:after{
-	display: table;
-	content: '';
-	clear: both;
-}
 .footer{
 	text-align: center;
 	color:#888;
@@ -112,12 +107,16 @@ li{
 	font-size: 12px;
 	margin-top: 20px;
 }
+.home-date{
+	font-size: 10px;
+}
+.home-list li{
+	line-height: 2em;
+	padding-left: 1em;
+}
 /*
-
 Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
-
 */
-
 .hljs {
   display: block;
   overflow-x: auto;
@@ -216,5 +215,10 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 }
 .tc{
 	text-align: center;
+}
+.fix:after{
+	clear:both;
+	display: table;
+	content: '';
 }
 /*------------------------------ libs end ---------------------------*/

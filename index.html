@@ -2,8 +2,11 @@
 layout: default
 ---
 <!-- <h2>{{ page.title }}</h2> -->
-<ul>
+<ol class="home-list">
 　　{% for post in site.posts %}
-　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　　　<li class="fix">
+			<a class="l" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+			<span class="r home-date">{{ post.date | date_to_string }}</span>
+		</li>
 　　{% endfor %}
-</ul>
+</ol>
