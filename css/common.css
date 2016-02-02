@@ -11,10 +11,12 @@ body{
 	text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 @media screen and (max-width:760px){
+	body{
+		font-size: 20px;
+	}
 	.container{
 		margin-left: 5px;
 		margin-right: 5px;
-		font-size: 20px;
 		width:100%;
 	}
 }
