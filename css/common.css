@@ -11,8 +11,9 @@ body{
 	text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 @media screen and (max-width:760px){
-	.content{
-		width:100%;
+	.container{
+		margin-left: 5px;
+		margin-right: 5px;
 		font-size: 20px;
 	}
 }
@@ -32,8 +33,6 @@ code{
   margin: 0 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,.1);
   font-size: 16px;
-  width: 782px;
-  float: left;
 }
 img{
 	border:0;
