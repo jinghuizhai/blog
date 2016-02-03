@@ -4,6 +4,21 @@
 　　　　<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 　　　　<title>{{ page.title }}</title>
 	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/common.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/highlight.js/9.1.0/highlight.min.js"></script>
+	<script type="text/javascript">
+	//去掉code中的换行符
+	// window.onload = function(){
+	// 	var codes = document.getElementsByTagName('code');
+	// 	for(var i = 0,len = codes.length;i<len;i++){
+	// 		var code = codes[i],
+	// 			html = code.innerText || code.textContent;
+	// 		html = html.replace(/^\n+|\n+$/g,'');
+	// 		if(code.innerText) code.innerText = html;
+	// 		else code.textContent = html;
+	// 	}
+	// };
+	hljs.initHighlightingOnLoad();
+	</script>
 　　</head>
 　　<body>
 		<div class="container fix">
