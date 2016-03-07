@@ -13,8 +13,11 @@ title: python爬虫存档
   import requests
   
   def get_list(url,headers):
-      r = requests.get(url=url,headers=headers)
-      text = r.text#maybe you need t.text.encode("utf-8")
-      d = jquery(text)
-      lists = d(".list")
+    r = requests.get(url=url,headers=headers)
+    text = r.text#maybe you need t.text.encode("utf-8")
+    d = jquery(text)
+    lists = d(".list")
+    if lists:
+      for list in lists:
+        print jqery(list).html()
 ```
