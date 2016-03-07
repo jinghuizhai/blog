@@ -1,6 +1,6 @@
 ---
-layout:default
-title:'python爬虫存档'
+layout: default
+title: python爬虫存档
 ---
 # python爬虫存档
 `
