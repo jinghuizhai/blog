@@ -2,7 +2,7 @@
 layout: default
 title: 'javascript日期比较'
 ---
-#javascript日期比较
+# javascript日期比较
 今天遇到一个问题。
 ng-if指令一直很好用。
 但是今天比较日期的时候总是出错。
