@@ -8,8 +8,8 @@ title: python爬虫存档
   如何发起http请求呢，我们使用`requests`，安装：`easy_install requests`。
   如何像`jQuery`那样匹配内容呢，安装:`easy_install pyquery`。
 ## 一个简单的例子
-```
-  from pyquery import PyQuery as jquery
+<pre><code>
+from pyquery import PyQuery as jquery
   import requests
   
   def get_list(url,headers):
@@ -20,4 +20,4 @@ title: python爬虫存档
     if lists:
       for list in lists:
         print jqery(list).html()
-```
+</code></pre>
