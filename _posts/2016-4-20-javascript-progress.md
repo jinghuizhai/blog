@@ -26,3 +26,4 @@ progress.next();
 console.log(progress.getCurrent());
 console.log(progress.getStep());
 ```
+<a href="https://github.com/jinghuizhai/simpleprogress">link</a>
