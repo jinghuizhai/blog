@@ -5,6 +5,7 @@ title: 介绍一款简单的JavaScript进度条
 # 介绍一款简单的JavaScript进度条
 ## How to use
 ```
+
 var progress = $.simpleProgress({
 	id:'progress',
 	step:4,
