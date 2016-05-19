@@ -11,22 +11,22 @@ title: avalon引入模板
 <br/>
 1 script
 <br/>
-<pre><code>
+```
 <div ms-controller="test">
     <p>{{xxx}}</p>
     <div ms-include="'tpl'"></div>
 </div>
-</code></pre>
-<pre><code>
+```
+```
 <script type="avalon" id="tpl">
     here, {{ 3 + 6 * 5 }}
 </script>
-</code></pre>
+```
 2 ajax
 <br/>
-<pre><code>
+```
 <div  ms-include-src="'tmpl.html'"></div>
-</code></pre>
+```
 这需要服务器的支持。
 <br/>
 > 1 如果大家想在模板加载后，加工一下模板，可以使用 data-include-loaded 来指定回调的名字。
