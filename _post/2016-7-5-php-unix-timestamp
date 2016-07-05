@@ -1,0 +1,20 @@
+由于众所周知的原因，时间戳只能是1970年以后的日期，为了表示1970年以前的日期，我们可以这样做：
+```
+//1、Unix时间戳转日期
+
+function unixtime_to_date($unixtime, $timezone = 'PRC') {
+    $datetime = new DateTime("@$unixtime"); //DateTime类的bug，加入@可以将Unix时间戳作为参数传入
+    $datetime->setTimezone(new DateTimeZone($timezone));
+    return $datetime->format("Y-m-d H:i:s");
+}
+
+//2、日期转Unix时间戳
+function date_to_unixtime($date, $timezone = 'PRC') {
+    $datetime= new DateTime($date, new DateTimeZone($timezone));
+    return $datetime->format('U');
+}
+
+echo date_to_unixtime("1900-1-31 00:00:00"); //输出-2206425952
+echo '<br>'; 
+echo unixtime_to_date(date_to_unixtime("1900-1-31 00:00:00")); //输出1900-01-31 00:00:00
+```
