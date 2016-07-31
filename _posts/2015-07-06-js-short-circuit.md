@@ -1,4 +1,8 @@
-avalon code:
+---
+layout: default
+title:avalon
+---
+# avalon code:
 ```
 validatePhone:function(){
             var pass = false;
