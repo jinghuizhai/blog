@@ -27,7 +27,7 @@
         </ul>
       </header>
       {% for post in site.posts %}
-      {{ post.date | date_to_string }} {{ post.title }}
+      <p>{{ post.date | date_to_string }} {{ post.title }}</p>
       {% endfor %}
     </div>
     <footer>
