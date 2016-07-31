@@ -1,6 +1,6 @@
 ---
-layout:default
-title:avalon
+layout: default
+title: avalon
 ---
 # avalon code:
 ```
