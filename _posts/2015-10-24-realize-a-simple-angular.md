@@ -50,22 +50,22 @@ function model(el,data){
 ```
 ## 调用
 ```
-	var html = model(document.getElementById('list').innerHTML,[{name:'Tom'},{name:'Jack'},{name:'Jerry'}]);
-	document.getElementById('list').innerHTML = html;
+var html = model(document.getElementById('list').innerHTML,[{name:'Tom'},{name:'Jack'},{name:'Jerry'}]);
+document.getElementById('list').innerHTML = html;
 ```
 ## 结果
-	```
-	<ul id="list">
-	    <li>
-	        Tom
-	    </li>
-	    <li>
-	        Jack
-	    </li>
-	    <li>
-	        Jerry
-	    </li>
-	</ul>
-	```
+```
+<ul id="list">
+    <li>
+        Tom
+    </li>
+    <li>
+        Jack
+    </li>
+    <li>
+        Jerry
+    </li>
+</ul>
+```
 ****
 实际上，model函数与angularjs的实现原理是不同的，但在紧要关头，却能解决特殊的问题。函数要用在生产环境中需要改进。
