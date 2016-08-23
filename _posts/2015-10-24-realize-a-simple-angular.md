@@ -14,7 +14,7 @@ angular对搜索引擎不友好，非常适合于后端的单页面应用。在�
 
 我们可以借用angularjs的思想做一些东西，比如动态组装一个div，如果一个页面中这样的需求很少，
 而去引用一个angularjs文件的话是很不划算的。那就自己实现一个:
-## 
+## javascript:
 ```
 function model(el,data){
 	    var objs = el.match(/[{]{2}\s*([^{}]+)\s*[}}]{2}/g),
