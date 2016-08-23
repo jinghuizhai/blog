@@ -2,14 +2,21 @@
 layout: default
 title: angularjs的简单实现
 ---
-#angularjs的简单实现
+# Angularjs的简单实现
 很多人喜欢google的angularjs，它真正实现了前后端的分离，后端人员再也不用再html页面里填充杂乱的标签。
-angular对搜索引擎不友好，非常适合于后端的单页面应用。在使用angulajs以前，我们想把数据插入到div中，只能通过拼接字符串的方式，
+
+
+angular对搜索引擎不友好，非常适合于后端的单页面应用。在使用angulajs以前，我们想把数据插入到div中，只能通过拼接字符串的方式。
+
+
 这对前端和后端都是噩梦。
+
+
 我们可以借用angularjs的思想做一些东西，比如动态组装一个div，如果一个页面中这样的需求很少，
 而去引用一个angularjs文件的话是很不划算的。那就自己实现一个:
-##javascipt:
-<pre><code>function model(el,data){
+## javascipt:
+```
+function model(el,data){
 	    var objs = el.match(/[{]{2}\s*([^{}]+)\s*[}}]{2}/g),
 	        ret = [];
 	    if(objs){
@@ -32,22 +39,22 @@ angular对搜索引擎不友好，非常适合于后端的单页面应用。在�
 	        return '';
 	    }
 	}
-</code></pre>
+```
 ## div
-<pre><code>
-	<ul id="list">
-	    <li>
-	        {{ name }}
-	    </li>
-	</ul>
-</code></pre>
+```
+<ul id="list">
+    <li>
+        {{ name }}
+    </li>
+</ul>
+```
 ## 调用
-<pre><code>
+```
 	var html = model(document.getElementById('list').innerHTML,[{name:'Tom'},{name:'Jack'},{name:'Jerry'}]);
 	document.getElementById('list').innerHTML = html;
-</code></pre>
-##结果
-	<pre><code>
+```
+## 结果
+	```
 	<ul id="list">
 	    <li>
 	        Tom
@@ -59,6 +66,6 @@ angular对搜索引擎不友好，非常适合于后端的单页面应用。在�
 	        Jerry
 	    </li>
 	</ul>
-	</code></pre>
-_______________
+	```
+****
 实际上，model函数与angularjs的实现原理是不同的，但在紧要关头，却能解决特殊的问题。函数要用在生产环境中需要改进。
